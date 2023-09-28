@@ -1,6 +1,6 @@
 import React from "react";
 import { app } from "../firebase"
-import { getDatabase, onValue, ref, set} from "../firebase/database";
+import { getDatabase, onValue, ref, set} from "firebase/database";
 
 
 
@@ -13,7 +13,6 @@ export default function Churches(){
     const [ secName, setSecName ] = React.useState("")
     const [ curDatabase, setCurDatabase ] = React.useState({})
     const [ churchArray, setChurchArray ] = React.useState([])
-    const [ rerender, setRerender ] = React.useState("")
     
     const db = getDatabase(app)
     
@@ -38,7 +37,6 @@ export default function Churches(){
                     secName: secName,
                     location: location
                 })
-                setRerender(prevStete => !prevStete)
             }
         }
         
