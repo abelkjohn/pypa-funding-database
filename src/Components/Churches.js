@@ -46,7 +46,7 @@ export default function Churches(){
         {churchArray.map(i => {
             return (
                     
-                    <div id="church-card">
+                    <div id='church-card' className="church-card">
                         <h1>{i.name}</h1>
                         <h2>{i.location}</h2>
                         <h3>{i.prName}</h3>
@@ -56,7 +56,7 @@ export default function Churches(){
             
         })}
         {/** Creating new Churches */}
-        <form id="church-card">
+        <form id="add-new-church">
         <label>Church Name:</label>
             <input onChange={(e) => setName(e.target.value)} type="text" required>
             </input> 

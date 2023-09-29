@@ -2,8 +2,19 @@
   text-align: center;
 }
 
+
+.hello{
+  margin: 5em auto 0;
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
 #church-card {
   display: flex;
+}
+
+.church-card {
   flex-direction: column;
   align-items: center;
   width: 250px;
@@ -12,27 +23,48 @@
   border: 2px solid black;
   border-radius: 20px;
 }
-
-.hello{
-  margin: 0 auto;
-  width: 80%;
-  display: flex;
-  flex-wrap: wrap;
-}
-
- #church-card > * {
+.church-card > * {
   margin: 0.2em 0;
 }
 
-#church-card > h1 {
+.church-card > h1 {
   text-decoration: underline;
   margin-bottom: 0;
 }
-#church-card > h2 {
+.church-card > h2 {
   margin-top: 0;
   margin-bottom: 1em;
 }
 
+#add-new-church{
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  width: 250px;
+  margin: 1em auto;
+  padding: 2em 0em;
+  border: 2px solid black;
+  border-radius: 20px;
+  background-color: white;
+  position: fixed;
+  margin: 10em 1.7em;
+}
+
 #header {
+  background-color: white;
   border-bottom: 1px solid black;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+}
+
+#add-churches-button{
+  font-size: 3.5em;
+  padding: 1rem 2.25rem;
+  border: none;
+  border-radius: 15%;
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
 }
