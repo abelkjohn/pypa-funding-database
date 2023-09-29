@@ -57,7 +57,8 @@ export default function Churches(){
         })}
         {/** Creating new Churches */}
         <form id="add-new-church">
-        <label>Church Name:</label>
+            <h1>Enter Church Details:</h1>
+            <label>Church Name:</label>
             <input onChange={(e) => setName(e.target.value)} type="text" required>
             </input> 
             <label>Church Location:</label>
