@@ -1,6 +1,6 @@
 import React from "react";
 import { app } from "../firebase"
-import { getDatabase, onValue, ref, set} from "firebase/database";
+import { getDatabase, onValue, ref, set} from "../firebase"
 
 
 

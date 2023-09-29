@@ -17,3 +17,4 @@ const firebaseConfig = {
 
 // Initialize Firebase
 export const app = initializeApp(firebaseConfig);
+export { getDatabase, onValue, ref, set} from "firebase/database"
