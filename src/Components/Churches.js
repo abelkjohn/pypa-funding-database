@@ -25,6 +25,11 @@ export default function Churches(){
             setChurchArray(Object.values(curDatabase))
         })
         })
+
+    function removeAddChurchCard(){
+        document.getElementById("add-new-church").style.display = "none"
+        document.querySelector("input").value = ""
+    }
     
     function addNewChurch(){
         if (null) {
@@ -83,6 +88,7 @@ export default function Churches(){
             <div id="button">
                 <button id="proper-add-button" onClick={addNewChurch}>Add Churches</button>
             </div>
+            <button id="add-new-church-close" onClick={removeAddChurchCard}>X</button>
         </form>
     </div>
  )   
