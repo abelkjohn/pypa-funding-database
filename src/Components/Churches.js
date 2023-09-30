@@ -56,21 +56,33 @@ export default function Churches(){
             
         })}
         {/** Creating new Churches */}
-        <form id="add-new-church">
-            <h1>Enter Church Details:</h1>
-            <label>Church Name:</label>
-            <input onChange={(e) => setName(e.target.value)} type="text" required>
-            </input> 
-            <label>Church Location:</label>
-            <input onChange={(e) => setLocation(e.target.value)} type="text" required>
-            </input>
-            <label>Church Pastor:</label>
-            <input onChange={(e) => setPrName(e.target.value)} type="text" required>
-            </input>        
-            <label>Church P.Y.P.A. Secretary:</label>
-            <input onChange={(e) => setSecName(e.target.value)} type="text" required>
-            </input>
-            <button onClick={addNewChurch}>Add Churches</button>
+        <form id="add-new-church" className="display">
+            <div id="add-header">
+                <h1>Enter Church Details:</h1>
+            </div>
+            <div className="flex" id="input1">
+                <label>Church Name:</label>
+                <input className="input-proper" onChange={(e) => setName(e.target.value)} type="text" required>
+                </input> 
+            </div>
+            <div className="flex" id="input2">
+                <label>Church Location:</label>
+                <input className="input-proper" onChange={(e) => setLocation(e.target.value)} type="text" required>
+                </input>
+            </div>
+            <div className="flex" id="input3">
+                <label>Church Pastor:</label>
+                <input className="input-proper" onChange={(e) => setPrName(e.target.value)} type="text" required>
+                </input>        
+            </div>
+            <div className="flex" id="input4">
+                <label>Church P.Y.P.A. Secretary:</label>
+                <input className="input-proper" onChange={(e) => setSecName(e.target.value)} type="text" required>
+                </input>
+            </div>
+            <div id="button">
+                <button id="proper-add-button" onClick={addNewChurch}>Add Churches</button>
+            </div>
         </form>
     </div>
  )   

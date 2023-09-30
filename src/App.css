@@ -2,10 +2,12 @@
   text-align: center;
 }
 
+body{
+  margin: 0;
+}
 
 .hello{
   margin: 5em auto 0;
-  width: 80%;
   display: flex;
   flex-wrap: wrap;
 }
@@ -37,17 +39,25 @@
 }
 
 #add-new-church{
-  display: none;
-  flex-direction: column;
   align-items: center;
-  padding: 2em 0em;
   border: 2px solid black;
   border-radius: 20px;
   background-color: white;
   position: fixed;
-  width: 76.8vw; 
+  max-width: 400px;
+  left: 6.8vw;
+  right: 6.8vw;
   height: 50vh;
-  margin: 3em 1.1em;
+  margin: 4.5em auto;
+}
+
+.input-proper {
+  border: 1.8px solid black;
+  border-radius: 5px;
+}
+
+#add-header {
+  text-decoration: underline;
 }
 
 #header {
@@ -74,34 +84,119 @@
   #add-new-church{
     display: none;
     flex-direction: column;
-    align-items: center;
-    padding: 1em 1em 2em 1em;
-    border: 2px solid black;
-    border-radius: 20px;
-    background-color: white;
-    position: fixed;
-    left: 2.8vw;
-    right: 0;
-    height: 50vh;
+    height: 53.70vh;
+  }
+  .flex {
+    display: flex;
+    flex-direction: column;
   }
 
-  #add-new-church > input {
+  .input-proper {
     margin-top: 0.1em;
     margin-bottom: 1.2em;
     padding: 0.75em;
   }
 
-  #add-new-church > h1 {
+  #add-header {
     margin-top: 0em;
-    margin-bottom: 0.2em;
+    margin-bottom: 0em;
   }
 
-  #add-new-church > button {
+  #proper-add-button {
     margin-top: 0.5em;
     padding: 1em;
     width: 12em;
     border: none;
     border-radius: 12px;
     font-size: 1.2em;
+  }
+}
+
+@media screen and (min-width: 480px) {
+
+  .input-proper {
+    margin-top: 0.1em;
+    margin-bottom: 1.2em;
+    padding: 0.75em;
+  }
+
+  #proper-add-button {
+    margin-top: 0.5em;
+    padding: 1em;
+    width: 12em;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.2em;
+  }
+
+  #add-new-church {
+    display: none;
+    padding: 0 1em;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 25% 25% 25% 25%;
+  }
+
+  #add-header {
+    grid-row-start: 1;
+    grid-row-end: 1;
+    grid-column-start: 1;
+    grid-column-end: 5;
+  }
+
+  #input1 {
+    grid-row-start: 2;
+    grid-row-end: 2;
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+
+  #input2 {
+    grid-row-start: 2;
+    grid-row-end: 2;
+    grid-column-start: 3;
+    grid-column-end: 5;
+  }
+
+  #input3 {
+    grid-row-start: 3;
+    grid-row-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+
+  #input4 {
+    grid-row-start: 3;
+    grid-row-end: 3;
+    grid-column-start: 3;
+    grid-column-end: 5;
+  }
+
+  #button{
+    grid-row-start: 4;
+    grid-row-end: 5;
+    grid-column-start: 1;
+    grid-column-end: 5;
+  }
+
+
+  .flex {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+}
+
+@media screen and (max-height: 400px) {
+  #add-new-church {
+    height: 250px;
+    margin-top: -1em;
+  }
+  #add-new-church > * {
+    margin-top: 3em;
+  }
+  #add-header {
+    margin-top: 1em;
   }
 }
