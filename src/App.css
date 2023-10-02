@@ -2,9 +2,6 @@
   text-align: center;
 }
 
-#temp {
-  margin-top: 4em;
-}
 
 body{
   margin: 0;
@@ -137,6 +134,91 @@ body{
   background-color: white;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Specific DATA to Church Users */
+
+
+#info-header {
+  position: fixed;
+  border-bottom: 1px solid black;
+  padding-bottom: 0.68em;
+  background-color: white;
+  left: 0;
+  top: 0; 
+  right: 0;
+}
+
+#prospect-info-component{
+  margin-top: 6em;
+}
+
+#specific-info-button {
+  font-size: 3.5em;
+  padding: 1rem 2.25rem;
+  border: none;
+  border-radius: 15%;
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media screen and (max-width: 480px) {
   #add-new-church{
     display: none;
@@ -147,7 +229,7 @@ body{
     display: flex;
     flex-direction: column;
   }
-
+  
   .input-proper {
     margin-top: 0.1em;
     margin-bottom: 1.2em;

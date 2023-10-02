@@ -1,6 +1,6 @@
 import React from "react";
-import { app } from "../firebase"
-import { getDatabase, onValue, ref, set} from "../firebase"
+import { app } from "../../firebase"
+import { getDatabase, onValue, ref, set} from "../../firebase"
 import Button from './Button'
 import Password from './Password'
 import { Link } from 'react-router-dom'
@@ -18,7 +18,7 @@ export default function Churches(){
     
     React.useEffect(function(){
         const db = getDatabase(app)
-        const database = ref(db)
+        const database = ref(db, "/churches")
         onValue(database, (snapshot) => {
             const data = snapshot.val()
             setChurchArray(Object.values(data))
@@ -35,7 +35,7 @@ export default function Churches(){
 
         } else {
             if (name && prName && secName && location){
-                set(ref(db, `/${location}` ), {
+                set(ref(db, `/churches/${location}` ), {
                     name: name,
                     prName: prName,
                     secName: secName,
