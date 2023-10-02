@@ -1,8 +1,9 @@
 import React from "react";
 import { app } from "../firebase"
 import { getDatabase, onValue, ref, set} from "../firebase"
-
-
+import Button from './Button'
+import Password from './Password'
+import { Link } from 'react-router-dom'
 
 
 
@@ -11,7 +12,6 @@ export default function Churches(){
     const [ location, setLocation ] = React.useState("")
     const [ prName, setPrName ] = React.useState("")
     const [ secName, setSecName ] = React.useState("")
-    const [ curDatabase, setCurDatabase ] = React.useState({})
     const [ churchArray, setChurchArray ] = React.useState([])
     
     const db = getDatabase(app)
@@ -21,10 +21,9 @@ export default function Churches(){
         const database = ref(db)
         onValue(database, (snapshot) => {
             const data = snapshot.val()
-            setCurDatabase(data)
-            setChurchArray(Object.values(curDatabase))
+            setChurchArray(Object.values(data))
         })
-        })
+        }, [])
 
     function removeAddChurchCard(){
         document.getElementById("add-new-church").style.display = "none"
@@ -46,17 +45,25 @@ export default function Churches(){
         }
         
     }
- return (
-    <div class="hello">
+
+ return (    
+    <div className="hello">
+        <Button />
+        <Password />
         {churchArray.map(i => {
             return (
-                    
-                    <div id='church-card' className="church-card">
-                        <h1>{i.name}</h1>
-                        <h2>{i.location}</h2>
-                        <h3>{i.prName}</h3>
-                        <h3>{i.secName}</h3>
-                    </div>
+                    <Link to={`/${i.location}`}
+                    style={{ textDecoration: 'none' }}                     
+                    unselectable="on" 
+                    data-location={i.location} 
+                    key={i.location} 
+                    id='church-card' 
+                    className="church-card">
+                        <h1 data-location={i.location}>{i.name}</h1>
+                        <h2 data-location={i.location}>{i.location}</h2>
+                        <h3 data-location={i.location}>{i.prName}</h3>
+                        <h3 data-location={i.location}>{i.secName}</h3>
+                    </Link>
             )
             
         })}

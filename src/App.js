@@ -1,17 +1,24 @@
 import './App.css';
 import Header from "./Components/Header"
 import Churches from "./Components/Churches"
-import Button from "./Components/Button"
-import Password from "./Components/Password"
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+import ChurchLocation from './Components/ChurchLocation';
+
+
 
 function App() {
+
+  
   return (
-    <div className="App">
-      <Header />
-      <Churches />
-      <Button />
-      <Password />
-    </div>
+    <BrowserRouter>
+      <div id='app' className="App">
+        <Header />
+          <Routes>
+          <Route path='/' element={<Churches />} />
+          <Route path='/:listID' element={<ChurchLocation />}/>
+          </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 
