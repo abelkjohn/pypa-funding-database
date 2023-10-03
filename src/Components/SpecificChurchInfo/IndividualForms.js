@@ -37,23 +37,23 @@ export default function IndividualForms(props){
         document.getElementById("ind-input4").value = ""
     }
     return (
-        <form id="ind-form" className="add-new-values">
+        <form id="ind-form" >
             <div className="add-header">
                 <h1>Add Invividual Details Here:</h1>
             </div>
-            <div className="input1">
+            <div className="ind-input input1">
                 <label>Name:</label>
                 <input className="input-proper" id="ind-input1" onChange={e => setName(e.target.value)} required></input>
             </div>
-            <div className="input2">
+            <div className="ind-input input2">
                 <label>Country:</label>
                 <input className="input-proper" id="ind-input2" onChange={e => SetCountry(e.target.value)} required></input>
             </div>
-            <div  className="input3">
+            <div  className="ind-input input3">
                 <label>Best time to contact:</label>
                 <input className="input-proper" id="ind-input3"  onChange={e => setTime(e.target.value)} required></input>
             </div>
-            <div className="input4">
+            <div className="ind-input input4">
                 <label>Rupees Donated:</label>
                 <input className="input-proper" id="ind-input4"  onChange={e => setDonated(e.target.value)} required></input>
             </div>

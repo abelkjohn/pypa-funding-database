@@ -16,7 +16,6 @@ export default function ProspectDetails(props){
             if (data === null ){
                 document.getElementById("ind-dashboard").innerHTML = `<h1>Please add ${location} church members to continue...</h1>`
             } else {
-
                 setIndArray(Object.values(data))
             } 
         })

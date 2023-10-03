@@ -21,7 +21,10 @@ export default function Churches(){
         const database = ref(db, "/churches")
         onValue(database, (snapshot) => {
             const data = snapshot.val()
-            setChurchArray(Object.values(data))
+            if ( data === null ){
+            } else {
+                setChurchArray(Object.values(data))
+            }
         })
         }, [])
 
