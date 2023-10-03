@@ -18,11 +18,13 @@ export default function IndividualForms(props){
 
         } else {
             if (name && country && time && donated){
-                set(ref(db, `/individuals/${props.location}/${name + " " + uuidv4()}` ), {
+                const id = name + " " + uuidv4()
+                set(ref(db, `/individuals/${props.location}/${id}` ), {
                     name: name,
                     country: country,
                     time: time,
-                    donated: donated
+                    donated: donated,
+                    id: id
                 })
             }
         }

@@ -24,7 +24,7 @@ export default function ProspectDetails(props){
     return <div className="ind-dashboard" id="ind-dashboard">
         {indArray.length !== 0 ? indArray.map(i => {
         return (
-            <div id="ind-card" >
+            <div id="ind-card" key={i.id}>
                 <h1>{i.name}</h1>
                 <p>Current Location:</p>
                 <h3>{i.country}</h3>

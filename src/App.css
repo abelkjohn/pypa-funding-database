@@ -65,7 +65,7 @@ body{
   text-decoration: underline;
 }
 
-#header {
+.header {
   background-color: white;
   border-bottom: 1px solid black;
   position: fixed;
@@ -157,19 +157,6 @@ body{
 /* Specific DATA to Church Users */
 
 
-#info-header {
-  position: fixed;
-  border-bottom: 1px solid black;
-  padding-bottom: 0.68em;
-  background-color: white;
-  left: 0;
-  top: 0; 
-  right: 0;
-}
-
-#prospect-info-component{
-  margin-top: 6em;
-}
 
 #specific-info-button {
   font-size: 3.5em;
@@ -270,7 +257,6 @@ body{
   .add-new-values{
     display: none;
     flex-direction: column;
-    height: 53.70vh;
   }
   .flex {
     display: flex;
