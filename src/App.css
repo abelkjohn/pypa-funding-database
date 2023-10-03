@@ -40,7 +40,8 @@ body{
   margin-bottom: 1em;
 }
 
-#add-new-church{
+.add-new-values{
+  display: none;
   align-items: center;
   border: 2px solid black;
   border-radius: 20px;
@@ -71,7 +72,7 @@ body{
   right: 0;
 }
 
-#add-churches-button{
+.add-churches-button{
   font-size: 3.5em;
   padding: 1rem 2.25rem;
   border: none;
@@ -81,7 +82,7 @@ body{
   bottom: 1rem;
 }
 
-#password-field {
+.password-field {
   display: none;
   position: fixed;
   left: 10vw;
@@ -93,11 +94,11 @@ body{
   border-radius: 8px;
 }
 
-#password-field > h1 {
+.password-field > h1 {
   margin-bottom: -0.5em;
 }
 
-#password-field > input {
+.password-field > input {
   width: 60%;
   max-width: 400px;
   margin: 0.5em auto;
@@ -106,14 +107,14 @@ body{
   border: 1.5px solid black;
 }
 
-#password-field-button {
+.password-field-button {
   width: 200px;
   margin: 1em auto;
   padding: 1em;
   border: none;
   border-radius: 15px;
 }
-#add-new-church-close{
+.add-new-church-close{
   position: absolute;
   font-size: 20px;
   right: 0.2em;
@@ -220,7 +221,7 @@ body{
 
 
 @media screen and (max-width: 480px) {
-  #add-new-church{
+  .add-new-values{
     display: none;
     flex-direction: column;
     height: 53.70vh;
@@ -241,7 +242,7 @@ body{
     margin-bottom: 0em;
   }
 
-  #proper-add-button {
+  .proper-add-button {
     margin-top: 0.5em;
     padding: 1em;
     width: 12em;
@@ -259,7 +260,7 @@ body{
     padding: 0.75em;
   }
 
-  #proper-add-button {
+  .proper-add-button {
     margin-top: 0.5em;
     padding: 1em;
     width: 12em;
@@ -268,49 +269,49 @@ body{
     font-size: 1.2em;
   }
 
-  #add-new-church {
+  .add-new-values {
     display: none;
     padding: 0 1em;
     grid-template-columns: 25% 25% 25% 25%;
     grid-template-rows: 25% 25% 25% 25%;
   }
 
-  #add-header {
+  .add-header {
     grid-row-start: 1;
     grid-row-end: 1;
     grid-column-start: 1;
     grid-column-end: 5;
   }
 
-  #input1 {
+  .input1 {
     grid-row-start: 2;
     grid-row-end: 2;
     grid-column-start: 1;
     grid-column-end: 3;
   }
 
-  #input2 {
+  .input2 {
     grid-row-start: 2;
     grid-row-end: 2;
     grid-column-start: 3;
     grid-column-end: 5;
   }
 
-  #input3 {
+  .input3 {
     grid-row-start: 3;
     grid-row-end: 3;
     grid-column-start: 1;
     grid-column-end: 3;
   }
 
-  #input4 {
+  .input4 {
     grid-row-start: 3;
     grid-row-end: 3;
     grid-column-start: 3;
     grid-column-end: 5;
   }
 
-  #button{
+  .button{
     grid-row-start: 4;
     grid-row-end: 5;
     grid-column-start: 1;
@@ -328,11 +329,11 @@ body{
 }
 
 @media screen and (max-height: 400px) {
-  #add-new-church {
+  .add-new-values {
     height: 250px;
     margin-top: -1em;
   }
-  #add-new-church > * {
+  .add-new-values > * {
     margin-top: 3em;
   }
   #add-header {

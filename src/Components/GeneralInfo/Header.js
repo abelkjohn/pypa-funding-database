@@ -3,7 +3,7 @@ import React from "react"
 export default function Header(){
     return (
         <header id="header">
-            <h1>Funding Dashboard</h1>
+            <h1>Donations Dashboard</h1>
         </header>
     )
 }

@@ -3,6 +3,8 @@ import { useLocation } from "react-router-dom"
 import Header from "./Header"
 import ProspectDetails from "./ProspectDetails"
 import Button from "./Button"
+import Password from "./Password"
+import IndividualForms from "./IndividualForms"
 
 export default function ChurchLocation(){
     const location = useLocation()
@@ -13,6 +15,8 @@ export default function ChurchLocation(){
         <Header location={usableValue} />
         <ProspectDetails />
         <Button />
+        <Password />
+        <IndividualForms location={usableValue} />
         </>
     )
 }

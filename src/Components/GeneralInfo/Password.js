@@ -19,12 +19,12 @@ export default function Password(){
         }
     }
     return(
-        <div id="password-field">
+        <div className="password-field" id="password-field">
             <h1>Enter Passcode:</h1>
             <p id="warning"></p>
             <input id="password-input" type="password" onChange={(e) => setPassword(e.target.value)}></input>
-            <button id='password-field-button' onClick={appear}></button>
-            <button id="add-new-church-password" onClick={close}>X</button>
+            <button className='password-field-button' onClick={appear}></button>
+            <button className="add-new-church-close" onClick={close}>X</button>
         </div>
     )
 }

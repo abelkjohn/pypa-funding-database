@@ -6,6 +6,6 @@ export default function Button(){
 
     }
     return (
-        <button onClick={dissapear} id="add-churches-button">+</button>
+        <button onClick={dissapear} className="add-churches-button">+</button>
     )
 }

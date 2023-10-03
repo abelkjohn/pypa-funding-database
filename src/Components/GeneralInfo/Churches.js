@@ -27,7 +27,10 @@ export default function Churches(){
 
     function removeAddChurchCard(){
         document.getElementById("add-new-church").style.display = "none"
-        document.querySelector("input").value = ""
+        document.getElementById("church-input1").value = ""
+        document.getElementById("church-input2").value = ""
+        document.getElementById("church-input3").value = ""
+        document.getElementById("church-input4").value = ""
     }
     
     function addNewChurch(){
@@ -68,34 +71,34 @@ export default function Churches(){
             
         })}
         {/** Creating new Churches */}
-        <form id="add-new-church" className="display">
-            <div id="add-header">
+        <form id="add-new-church" className="display add-new-values">
+            <div className="add-header">
                 <h1>Enter Church Details:</h1>
             </div>
-            <div className="flex" id="input1">
+            <div className="input1 flex">
                 <label>Church Name:</label>
-                <input className="input-proper" onChange={(e) => setName(e.target.value)} type="text" required>
+                <input id="church-input1" className="input-proper" onChange={(e) => setName(e.target.value)} type="text" required>
                 </input> 
             </div>
-            <div className="flex" id="input2">
+            <div className="input2  flex">
                 <label>Church Location:</label>
-                <input className="input-proper" onChange={(e) => setLocation(e.target.value)} type="text" required>
+                <input id="church-input2" className="input-proper" onChange={(e) => setLocation(e.target.value)} type="text" required>
                 </input>
             </div>
-            <div className="flex" id="input3">
+            <div className="input3 flex">
                 <label>Church Pastor:</label>
-                <input className="input-proper" onChange={(e) => setPrName(e.target.value)} type="text" required>
+                <input id="church-input3" className="input-proper" onChange={(e) => setPrName(e.target.value)} type="text" required>
                 </input>        
             </div>
-            <div className="flex" id="input4">
+            <div className="input4 flex">
                 <label>Church P.Y.P.A. Secretary:</label>
-                <input className="input-proper" onChange={(e) => setSecName(e.target.value)} type="text" required>
+                <input id="church-input4" className="input-proper" onChange={(e) => setSecName(e.target.value)} type="text" required>
                 </input>
             </div>
-            <div id="button">
-                <button id="proper-add-button" onClick={addNewChurch}>Add Churches</button>
+            <div className="button">
+                <button className="proper-add-button" onClick={addNewChurch}>Add Churches</button>
             </div>
-            <button id="add-new-church-close" onClick={removeAddChurchCard}>X</button>
+            <button className="add-new-church-close" onClick={removeAddChurchCard}>X</button>
         </form>
     </div>
  )   
