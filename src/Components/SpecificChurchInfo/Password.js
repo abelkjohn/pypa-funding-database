@@ -7,7 +7,8 @@ export default function Password(){
         //close button functionality
         document.getElementById("specific-password-field").style.display = "none"
         document.getElementById("specific-password-input").value = ""
-        
+        document.getElementById("specific-warning").innerText = ""
+        setPassword("")
     }
     function appear(){
         document.getElementById("specific-password-input").value = ""
@@ -17,8 +18,11 @@ export default function Password(){
             document.getElementById("ind-form").style.display = layout
             document.getElementById("specific-password-field").style.display = "none"
             document.getElementById("specific-password-input").value = ""
+            document.getElementById("specific-warning").innerText = ""
+            setPassword("")
         } else {
             document.getElementById("specific-warning").innerText = "Invalid Password, please try again"
+            setPassword("")
         }
     }
     return(

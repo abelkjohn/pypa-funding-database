@@ -18,7 +18,7 @@ export default function IndividualForms(props){
 
         } else {
             if (name && country && time && donated){
-                set(ref(db, `/${props.location}/${name + " " + uuidv4()}` ), {
+                set(ref(db, `/individuals/${props.location}/${name + " " + uuidv4()}` ), {
                     name: name,
                     country: country,
                     time: time,

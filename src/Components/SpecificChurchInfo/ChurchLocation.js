@@ -13,7 +13,7 @@ export default function ChurchLocation(){
     return  (
         <>
         <Header location={usableValue} />
-        <ProspectDetails />
+        <ProspectDetails location={usableValue} />
         <Button />
         <Password />
         <IndividualForms location={usableValue} />

@@ -5,6 +5,7 @@ export default function Password(){
     function close(){
         document.getElementById("password-field").style.display = "none"
         document.getElementById("warning").innerText = ""
+        setPassword("")
 
     }
     function appear(){
@@ -14,8 +15,10 @@ export default function Password(){
             document.getElementById("add-new-church").style.display = layout 
             document.getElementById("password-field").style.display = "none"
             document.getElementById("warning").innerText = ""
+            setPassword("")
         } else {
-            document.getElementById("warning").innerText = "invalid Password, please try again"
+            document.getElementById("warning").innerText = "Invalid Password, please try again"
+            setPassword("")
         }
     }
     return(

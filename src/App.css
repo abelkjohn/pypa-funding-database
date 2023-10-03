@@ -54,6 +54,7 @@ body{
   margin: 4.5em auto;
 }
 
+
 .input-proper {
   border: 1.8px solid black;
   border-radius: 5px;
@@ -151,9 +152,6 @@ body{
 
 
 
-
-
-
 /* Specific DATA to Church Users */
 
 
@@ -182,7 +180,31 @@ body{
 }
 
 
+#ind-card {
+  display: flex;
+  margin: 1em;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding: 1em;
+  border: 2px solid black;
+  border-radius: 15px;
+}
 
+#ind-card > *{
+  margin: 0;
+}
+
+.ind-dashboard {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 0 1em;
+}
+
+
+#ind-form{
+  margin-top: -40vh;
+}
 
 
 
