@@ -38,6 +38,13 @@ export default function IndividualForms(props){
         document.getElementById("ind-input3").value = ""
         document.getElementById("ind-input4").value = ""
     }
+
+    window.addEventListener('orientationchange', function(){
+        if (document.getElementById("ind-form")){
+            document.getElementById("ind-form").style.display = 'none'
+        }
+    })
+
     return (
         <form id="ind-form" >
             <div className="add-header">

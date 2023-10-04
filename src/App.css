@@ -171,17 +171,18 @@ body{
 
 #ind-card {
   display: flex;
-  margin: 1em;
-  width: 250px;
+  text-align: center;
+  margin: 1em auto;
+  width: 280px;
   flex-direction: column;
-  flex-wrap: wrap;
-  padding: 1em;
+  padding: 2em;
   border: 2px solid black;
   border-radius: 15px;
 }
 
 #ind-card > *{
   margin: 0 auto;
+
 }
 
 #ind-card > h3 {
@@ -253,7 +254,7 @@ body{
 
 
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 500px) {
   .add-new-values{
     display: none;
     flex-direction: column;
@@ -284,12 +285,11 @@ body{
   }
 
   #ind-card{
-  margin: 1em auto;
-
+    margin: 1em auto;
   }
 }
 
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 500px) {
 
   .input-proper {
     margin-top: 0.1em;

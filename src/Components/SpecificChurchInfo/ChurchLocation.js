@@ -10,6 +10,7 @@ export default function ChurchLocation(){
     const location = useLocation()
     const locationName = JSON.stringify(location.pathname)
     const usableValue = locationName.slice(2, locationName.length -1)
+
     return  (
         <>
         <Header location={usableValue} />

@@ -8,7 +8,6 @@ import ChurchLocation from './Components/SpecificChurchInfo/ChurchLocation';
 
 function App() {
 
-  
   return (
     <BrowserRouter>
       <div id='app' className="App">
