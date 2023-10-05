@@ -2,10 +2,12 @@ import React from "react"
 import { app } from "../../firebase"
 import { getDatabase, ref, onValue} from "../../firebase"
 import IndPassword from "./IndPassword"
+import Modify from "./Modify"
 
 export default function ProspectDetails(props){
     
     const [ indArray, setIndArray ] = React.useState([]) 
+    const [ editReference, setEditReference ] = React.useState('')
     const [ link, setLink ] = React.useState('')
     const location = props.location
     
@@ -31,6 +33,7 @@ export default function ProspectDetails(props){
                     function getId(e){
                         const reference = e.target.dataset.id
                         setLink(ref(db, `/individuals/${props.location}/${reference}`))
+                        setEditReference(reference)
                         document.getElementById("ind-password-field").style.display = "flex"
                     }
         return (
@@ -46,5 +49,6 @@ export default function ProspectDetails(props){
             )
             }) : <h1>Loading....</h1>}
             <div id='ind-password-area'><IndPassword id={link} /></div>
+            <div id='ind-modify-form'><Modify location={props.location} id={editReference}/></div>
             </div>
 }

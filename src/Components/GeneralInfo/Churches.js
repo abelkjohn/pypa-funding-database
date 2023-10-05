@@ -53,10 +53,7 @@ export default function Churches(){
     }
     
     if (document.getElementById("add-new-church")){
-        const churchForm = document.getElementById("add-new-church")
-        window.addEventListener("resize", function(){
-            churchForm.style.display = "none" ? "none" : window.innerWidth > 500 ? "grid" : "flex"
-        })
+        window.addEventListener("orientationchange", () => document.getElementById("add-new-church").style.display = "none")
     }
 
  return (    
