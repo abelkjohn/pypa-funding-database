@@ -3,7 +3,7 @@ import { app } from "../../firebase"
 import { getDatabase, onValue, ref, set} from "../../firebase"
 import Button from './Button'
 import Password from './Password'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 
 
@@ -15,6 +15,7 @@ export default function Churches(){
     const [ churchArray, setChurchArray ] = React.useState([])
     
     const db = getDatabase(app)
+    const navigate = useNavigate()
     
     React.useEffect(function(){
         const db = getDatabase(app)
@@ -40,6 +41,7 @@ export default function Churches(){
         if (null) {
 
         } else {
+            navigate(-1)
             if (name && prName && secName && location){
                 set(ref(db, `/churches/${location}` ), {
                     name: name,
