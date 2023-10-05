@@ -41,7 +41,7 @@ export default function Churches(){
         if (null) {
 
         } else {
-            navigate()
+            navigate(-1)
             if (name && prName && secName && location){
                 set(ref(db, `/churches/${location}` ), {
                     name: name,
