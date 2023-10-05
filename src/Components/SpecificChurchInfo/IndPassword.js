@@ -3,18 +3,25 @@ import { remove } from "firebase/database";
 
 export default function IndPassword({id}){
     const [ password, setPassword ] = React.useState("")
+
+
+
     function close(){
         //close button functionality
         document.getElementById("ind-password-field").style.display = "none"
         document.getElementById("ind-password-input").value = ""
-        document.getElementById("specific-warning").innerText = ""
+        document.getElementById("ind-warning").innerText = ""
         setPassword('')
     }
+
+
     function deleteInd(){
         document.getElementById("ind-password-input").value = ""
         if ( password === "helloWorld"){
             remove(id)
             document.getElementById("ind-password-field").style.display = "none"
+            document.getElementById("ind-warning").innerText = ""
+
 
             setPassword("")
             //if password correct
@@ -24,13 +31,15 @@ export default function IndPassword({id}){
         }
     }
 
+
     function editInd(){
         document.getElementById("ind-password-input").value = ""
         if ( password === "helloWorld"){
             document.getElementById("ind-password-field").style.display = "none"
-            document.getElementById('ind-modify-form').style.display = 'flex'
             if (document.getElementById('edit-form')){
-                document.getElementById('edit-form').style.display = window.innerWidth > 500 ? "grid" : 'flex'
+                document.getElementById('edit-form').style.display = window.innerWidth > 500 ? "grid" : 'flex'  
+                document.getElementById("ind-warning").innerText = ""
+
             } 
             setPassword("")
             //if password correct
