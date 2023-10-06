@@ -1,7 +1,6 @@
 import React from "react";
 import { getDatabase, ref, onValue, update } from "../../firebase";
 import { app } from "../../firebase"
-import { useNavigate } from "react-router-dom";
 
 export default function Modify({location, id}){
 
@@ -9,7 +8,6 @@ export default function Modify({location, id}){
     const [ country, setCountry ] = React.useState("")
     const [ time, setTime ] = React.useState("")
     const [ donated, setDonated ] = React.useState("")
-    const navigate = useNavigate()
 
 
     React.useEffect(function(){
@@ -28,7 +26,6 @@ export default function Modify({location, id}){
         }, [ id, location ])
 
         function saveChanges(){
-            navigate(-1)
             const db = getDatabase(app)
             const database = ref(db, `/individuals/${location}/${id}`)
             update(database, {

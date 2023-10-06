@@ -2,7 +2,6 @@ import React from "react";
 import { v4 as uuidv4 } from 'uuid';
 import { app } from "../../firebase"
 import { getDatabase, ref, set} from "../../firebase"
-import { useNavigate } from 'react-router-dom'
 
 
 export default function IndividualForms(props){
@@ -11,7 +10,6 @@ export default function IndividualForms(props){
     const [ country, SetCountry] = React.useState("")
     const [ time, setTime ] = React.useState("")
     const [ donated, setDonated ] = React.useState("")
-    const navigate = useNavigate()
 
     const db = getDatabase(app)
 
@@ -19,7 +17,6 @@ export default function IndividualForms(props){
         if (null) {
 
         } else {
-            navigate(-1)
             if (name && country && time && donated){
                 const id = name + " " + uuidv4()
                 set(ref(db, `/individuals/${props.location}/${id}` ), {
