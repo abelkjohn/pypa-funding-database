@@ -7,7 +7,6 @@ import Modify from "./Modify"
 
 
 export default function ProspectDetails(props){
-    
     const [ indArray, setIndArray ] = React.useState([]) 
     const [ editReference, setEditReference ] = React.useState('')
     const [ link, setLink ] = React.useState('')

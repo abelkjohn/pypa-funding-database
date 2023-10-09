@@ -13,7 +13,13 @@ export default function IndividualForms(props){
 
     const db = getDatabase(app)
     
-    function addNewPerson(){
+    function addNewPerson(e){
+        e.preventDefault()
+        document.getElementById('ind-input1').value = ""
+        document.getElementById('ind-input2').value = ""
+        document.getElementById('ind-input3').value = ""
+        document.getElementById('ind-input4').value = ""
+        document.getElementById('ind-form').style.display = "none"
         if (null) {
 
         } else {
