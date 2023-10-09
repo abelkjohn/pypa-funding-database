@@ -10,14 +10,15 @@ export default function ChurchLocation(){
     const location = useLocation()
     const locationName = JSON.stringify(location.pathname)
     const usableValue = locationName.slice(2, locationName.length -1)
+    const displayValue = usableValue.replace("%20", " ")
 
     return  (
         <>
-        <Header location={usableValue} />
-        <ProspectDetails location={usableValue} />
-        <Button />
-        <Password />
-        <IndividualForms location={usableValue} />
+            <Header location={usableValue} name={displayValue}/>
+            <ProspectDetails location={usableValue} />
+            <Button />
+            <Password />
+            <IndividualForms location={usableValue} />
         </>
     )
 }

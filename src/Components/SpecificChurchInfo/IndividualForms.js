@@ -12,7 +12,7 @@ export default function IndividualForms(props){
     const [ donated, setDonated ] = React.useState("")
 
     const db = getDatabase(app)
-
+    
     function addNewPerson(){
         if (null) {
 
@@ -27,6 +27,7 @@ export default function IndividualForms(props){
                     id: id
                 })
             }
+
         }
         
     }

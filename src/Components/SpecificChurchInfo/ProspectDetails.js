@@ -4,16 +4,18 @@ import { getDatabase, ref, onValue} from "../../firebase"
 import IndPassword from "./IndPassword"
 import Modify from "./Modify"
 
+
+
 export default function ProspectDetails(props){
     
     const [ indArray, setIndArray ] = React.useState([]) 
     const [ editReference, setEditReference ] = React.useState('')
     const [ link, setLink ] = React.useState('')
-    const location = props.location
-    
-    const db = getDatabase(app)
 
+    const db = getDatabase(app)
+    
     React.useEffect(function(){
+        const location = props.location
         const db = getDatabase(app)
         const database = ref(db, `/individuals/${location}`)
         onValue(database, (snapshot) => {
@@ -24,7 +26,7 @@ export default function ProspectDetails(props){
                 setIndArray(Object.values(data))
             } 
         })
-        }, [ location ])
+        }, [ props ])
 
 
 

@@ -15,7 +15,6 @@ export default function Churches(){
     const [ churchArray, setChurchArray ] = React.useState([])
     
     const db = getDatabase(app)
-    const navigate = useNavigate()
     
     React.useEffect(function(){
         const db = getDatabase(app)
