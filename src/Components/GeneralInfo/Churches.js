@@ -5,6 +5,7 @@ import Button from './Button'
 import Password from './Password'
 import { Link } from 'react-router-dom'
 import EditForm from './EditForm'
+import Header from "./Header"
 
 
 
@@ -15,7 +16,8 @@ export default function Churches(){
     const [ secName, setSecName ] = React.useState("")
     const [ churchArray, setChurchArray ] = React.useState([])
     const [ selectedLocation, setSelectedLocation ] = React.useState('')
-    
+
+
     const db = getDatabase(app)
     
     React.useEffect(function(){
@@ -60,6 +62,7 @@ export default function Churches(){
 
  return (    
     <div className="hello">
+        <Header />
         <Button />
         <Password />
         {selectedLocation}
