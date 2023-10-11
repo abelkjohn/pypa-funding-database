@@ -20,7 +20,7 @@ export default function Person(props){
     }
 
     const db = getDatabase(app)
-    const [ value, setValue] = React.useState('')
+    const [ value, setValue ] = React.useState('')
 
     function close(e){
         e.preventDefault()
