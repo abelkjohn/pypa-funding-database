@@ -4,6 +4,7 @@ import { getDatabase, onValue, ref, set} from "../../firebase"
 import Button from './Button'
 import Password from './Password'
 import { Link } from 'react-router-dom'
+import EditForm from './EditForm'
 
 
 
@@ -13,6 +14,7 @@ export default function Churches(){
     const [ prName, setPrName ] = React.useState("")
     const [ secName, setSecName ] = React.useState("")
     const [ churchArray, setChurchArray ] = React.useState([])
+    const [ selectedLocation, setSelectedLocation ] = React.useState('')
     
     const db = getDatabase(app)
     
@@ -60,20 +62,28 @@ export default function Churches(){
     <div className="hello">
         <Button />
         <Password />
+        {selectedLocation ? <EditForm url={selectedLocation}/> : null}
         {churchArray.map(i => {
+            function edit(e){
+                e.preventDefault()
+                setSelectedLocation(i.location)
+            }
             return (
-                    <Link to={`/${i.location}`}
-                    style={{ textDecoration: 'none' }}                     
-                    unselectable="on" 
-                    data-location={i.location} 
-                    key={i.location} 
-                    id='church-card' 
-                    className="church-card">
-                        <h1 data-location={i.location}>{i.name}</h1>
-                        <h2 data-location={i.location}>{i.location}</h2>
-                        <h3 data-location={i.location}>{i.prName}</h3>
-                        <h3 data-location={i.location}>{i.secName}</h3>
-                    </Link>
+                    <div className="church-card" key={i.location}>
+                        <Link
+                        className="church-card-without-button"
+                        to={`/${i.location}`}
+                        style={{ textDecoration: 'none' }}                     
+                        unselectable="on" 
+                        data-location={i.location} 
+                        id={i.location}>
+                            <h1 data-location={i.location}>{i.name}</h1>
+                            <h2 data-location={i.location}>{i.location}</h2>
+                            <h3 data-location={i.location}>{i.prName}</h3>
+                            <h3 data-location={i.location}>{i.secName}</h3>
+                        </Link>
+                        <button className="church-edit-button" onClick={edit}>Edit Details</button>
+                    </div>
             )
             
         })}
