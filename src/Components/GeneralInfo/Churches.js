@@ -47,7 +47,7 @@ export default function Churches(){
                     name: name,
                     prName: prName,
                     secName: secName,
-                    location: location
+                    location: location,
                 })
             }
         }
@@ -62,11 +62,11 @@ export default function Churches(){
     <div className="hello">
         <Button />
         <Password />
-        {selectedLocation ? <EditForm url={selectedLocation}/> : null}
+        {selectedLocation}
         {churchArray.map(i => {
             function edit(e){
                 e.preventDefault()
-                setSelectedLocation(i.location)
+                setSelectedLocation(<EditForm url={i.location}/>)
             }
             return (
                     <div className="church-card" key={i.location}>
@@ -82,7 +82,7 @@ export default function Churches(){
                             <h3 data-location={i.location}>{i.prName}</h3>
                             <h3 data-location={i.location}>{i.secName}</h3>
                         </Link>
-                        <button className="church-edit-button" onClick={edit}>Edit Details</button>
+                        <button className="church-edit-button" onClick={edit}>Edit Church Details</button>
                     </div>
             )
             

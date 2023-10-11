@@ -15,15 +15,16 @@ export default function ProspectDetails(props){
     
     React.useEffect(function(){
         const location = props.location
+        const displayValue = props.name
         const db = getDatabase(app)
         const database = ref(db, `/individuals/${location}`)
         onValue(database, (snapshot) => {
             const data = snapshot.val()
             if (data === null ){
-                document.getElementById("ind-dashboard").innerHTML = `<h1>Please add ${location} church members to continue...</h1>`
+                document.getElementById("ind-dashboard").innerHTML = `<h1>Please add ${displayValue} church members to continue...</h1>`
             } else {
                 setIndArray(Object.values(data))
-            } 
+            }
         })
         }, [ props ])
 
