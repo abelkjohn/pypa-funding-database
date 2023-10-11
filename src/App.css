@@ -279,9 +279,6 @@ body{
   border: 2px solid black;
 }
 
-#edit-header{
-  margin: 1em 1em;
-}
 
 
 
@@ -402,7 +399,11 @@ body{
     text-align: center;
     align-items: center;
   }
-
+  
+  #edit-header{
+    margin: 1em 1em;
+  }
+  
 }
 
 @media screen and (max-height: 400px) {
