@@ -55,7 +55,7 @@ export default function EditForm(props){
     return (
         <form id="church-edit-form" className="add-new-values">
             <div className="add-header" id="edit-header">
-                <h1>Enter {location} Church Details:</h1>
+                <h1>Enter Church Details:</h1>
             </div>
             <div className="input1 flex">
                 <label>Church Name:</label>

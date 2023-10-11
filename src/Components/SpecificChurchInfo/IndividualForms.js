@@ -35,6 +35,7 @@ export default function IndividualForms(props){
             }
 
         }
+        window.location.reload()
         
     }
 
