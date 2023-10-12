@@ -4,12 +4,15 @@ import React from "react";
 export default function Password(){
     const [ password, setPassword ] = React.useState("")
     function close(){
+        window.location.reload()
         //close button functionality
         document.getElementById("specific-password-field").style.display = "none"
         document.getElementById("specific-password-input").value = ""
         document.getElementById("specific-warning").innerText = ""
         setPassword("")
     }
+
+
     function appear(){
         document.getElementById("specific-password-input").value = ""
         if ( password === "helloWorld"){

@@ -39,8 +39,8 @@ export default function Modify({location, id}){
             document.getElementById("edit-time").value = ""
             document.getElementById("edit-contry").value = ""
             document.getElementById("edit-donated").value = ""
-            document.getElementById("edit-form").style.display = "none"
-
+            document.getElementById("edit-form").style.display = "none" 
+            window.location.reload()
         }
         if (document.getElementById("edit-form")){
             window.addEventListener("orientationchange", () => document.getElementById("edit-form").style.display = "none")

@@ -328,6 +328,23 @@ body{
   border-radius: 0px 0px 15px 15px;
 }
 
+#main-password {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 1em;
+  border: 1px solid black;
+  background-color: white;
+  border-radius: 15px;
+}
+
+#main-password > form > input {
+  padding: 1em;
+  border: 1px solid grey;
+  border-radius: 15px;
+}
+
 
 
 

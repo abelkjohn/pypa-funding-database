@@ -6,6 +6,7 @@ import Password from './Password'
 import { Link } from 'react-router-dom'
 import EditForm from './EditForm'
 import Header from "./Header"
+import MainPassword from "./MainPassword";
 
 
 
@@ -16,6 +17,7 @@ export default function Churches(){
     const [ secName, setSecName ] = React.useState("")
     const [ churchArray, setChurchArray ] = React.useState([])
     const [ selectedLocation, setSelectedLocation ] = React.useState('')
+    const [ authenticated, setAuthenticated ] = React.useState(false)
 
 
     const db = getDatabase(app)
@@ -63,33 +65,38 @@ export default function Churches(){
  return (    
     <div className="hello">
         <Header />
-        <Button />
-        <Password />
-        {selectedLocation}
-        {churchArray.map(i => {
-            function edit(e){
-                e.preventDefault()
-                setSelectedLocation(<EditForm url={i.location}/>)
-            }
-            return (
+        <MainPassword word={i => setAuthenticated(i)} auth={false}/>
+        {authenticated ? 
+        <>
+            <Button />
+            <Password />
+            {selectedLocation}
+            {churchArray.map(i => {
+                function edit(e){
+                    e.preventDefault()
+                    setSelectedLocation(<EditForm url={i.location}/>)
+                }
+                return (
                     <div className="church-card" key={i.location}>
-                        <Link
-                        className="church-card-without-button"
-                        to={`/${i.location}`}
-                        style={{ textDecoration: 'none' }}                     
-                        unselectable="on" 
-                        data-location={i.location} 
-                        id={i.location}>
-                            <h1 data-location={i.location}>{i.name}</h1>
-                            <h2 data-location={i.location}>{i.location}</h2>
-                            <h3 data-location={i.location}>{i.prName}</h3>
-                            <h3 data-location={i.location}>{i.secName}</h3>
-                        </Link>
-                        <button className="church-edit-button" onClick={edit}>Edit Church Details</button>
-                    </div>
-            )
-            
-        })}
+                            <Link
+                            className="church-card-without-button"
+                            to={`/${i.location}`}
+                            style={{ textDecoration: 'none' }}                     
+                            unselectable="on" 
+                            data-location={i.location} 
+                            id={i.location}>
+                                <h1 data-location={i.location}>{i.name}</h1>
+                                <h2 data-location={i.location}>{i.location}</h2>
+                                <h3 data-location={i.location}>{i.prName}</h3>
+                                <h3 data-location={i.location}>{i.secName}</h3>
+                            </Link>
+                            <button className="church-edit-button" onClick={edit}>Edit Church Details</button>
+                        </div>
+                )
+                
+            })}
+            </>
+        : ""} 
         {/** Creating new Churches */}
         <form id="add-new-church" className="display add-new-values">
             <div className="add-header">
