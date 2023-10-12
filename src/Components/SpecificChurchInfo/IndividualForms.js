@@ -14,12 +14,7 @@ export default function IndividualForms(props){
     const db = getDatabase(app)
     
     function addNewPerson(e){
-        e.preventDefault()
-        document.getElementById('ind-input1').value = ""
-        document.getElementById('ind-input2').value = ""
-        document.getElementById('ind-input3').value = ""
-        document.getElementById('ind-input4').value = ""
-        document.getElementById('ind-form').style.display = "none"
+
         if (null) {
 
         } else {
@@ -32,10 +27,17 @@ export default function IndividualForms(props){
                     donated: donated,
                     id: id
                 })
+                e.preventDefault()
+                document.getElementById('ind-input1').value = ""
+                document.getElementById('ind-input2').value = ""
+                document.getElementById('ind-input3').value = ""
+                document.getElementById('ind-input4').value = ""
+                document.getElementById('ind-form').style.display = "none"
+                window.location.reload()
             }
 
         }
-        window.location.reload()
+        
         
     }
 
@@ -45,6 +47,8 @@ export default function IndividualForms(props){
         document.getElementById("ind-input2").value = ""
         document.getElementById("ind-input3").value = ""
         document.getElementById("ind-input4").value = ""
+        window.location.reload()
+
     }
 
     window.addEventListener('orientationchange', function(){

@@ -261,10 +261,6 @@ body{
   margin: 0 1em;
 }
 
-.edit-delete-password-field-button{
-  padding: 1em;
-  width: 50%;
-}
 
 #edit-form{
   display: none;
@@ -276,18 +272,6 @@ body{
   top: 50%;
   transform: translate(-50%, -50%);
   background-color: white;
-}
-
-#delete-button {
-  border: none;
-  border-radius: 0px 0px 0px 10px;
-  margin-bottom: none;
-  border-right: 2px solid white;
-}
-#edit-button {
-  border: none;
-  border-radius: 0px 0px 10px 0px;
-  margin-bottom: none;
 }
 
 #ind-password-input{
@@ -345,8 +329,33 @@ body{
   border-radius: 15px;
 }
 
+#ind-edit-delete-field {
+  display: none;
+  flex-direction: column;
+  gap: 1em;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 2em 3em;
+  background-color: white;
+  border: 2px solid black ;
+  border-radius: 15px;
+}
 
+.edit-delete-password-field-button{
+  padding: 1.5em 4em;
+  border-radius: 15px;
+}
 
+#delete-button {
+  border: none;
+  margin-bottom: none;
+}
+#edit-button {
+  border: none;
+  margin-bottom: none;
+}
 
 
 

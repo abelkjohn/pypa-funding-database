@@ -6,20 +6,28 @@ import Password from './Password'
 import { Link } from 'react-router-dom'
 import EditForm from './EditForm'
 import Header from "./Header"
-import MainPassword from "./MainPassword";
+import { useNavigate } from "react-router-dom";
 
 
 
-export default function Churches(){
+export default function Churches(props){
+
+
+
     const [ name, setName ] = React.useState("")
     const [ location, setLocation ] = React.useState("")
     const [ prName, setPrName ] = React.useState("")
     const [ secName, setSecName ] = React.useState("")
     const [ churchArray, setChurchArray ] = React.useState([])
     const [ selectedLocation, setSelectedLocation ] = React.useState('')
-    const [ authenticated, setAuthenticated ] = React.useState(false)
+    const navigate = useNavigate() 
 
-
+    React.useEffect(() => {
+        if (props.auth !== true){
+            navigate('/login')
+        }
+    }, [props.auth, navigate])
+    
     const db = getDatabase(app)
     
     React.useEffect(function(){
@@ -62,12 +70,10 @@ export default function Churches(){
         window.addEventListener("orientationchange", () => document.getElementById("add-new-church").style.display = "none")
     }
 
- return (    
-    <div className="hello">
-        <Header />
-        <MainPassword word={i => setAuthenticated(i)} auth={false}/>
-        {authenticated ? 
-        <>
+    if (props.auth){
+        return (
+            <div className="hello">
+            <Header />
             <Button />
             <Password />
             {selectedLocation}
@@ -95,8 +101,6 @@ export default function Churches(){
                 )
                 
             })}
-            </>
-        : ""} 
         {/** Creating new Churches */}
         <form id="add-new-church" className="display add-new-values">
             <div className="add-header">
@@ -128,5 +132,6 @@ export default function Churches(){
             <button className="add-new-church-close" onClick={removeAddChurchCard}>X</button>
         </form>
     </div>
- )   
+        )
+    }   
 }

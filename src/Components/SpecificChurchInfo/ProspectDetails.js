@@ -42,7 +42,7 @@ export default function ProspectDetails(props){
                         const reference = e.target.dataset.id
                         setLink(ref(db, `/individuals/${props.location}/${reference}`))
                         setEditReference(reference)
-                        document.getElementById("ind-password-field").style.display = "flex"
+                        document.getElementById("ind-edit-delete-field").style.display = "flex"
                     }
                     function details(e){
                         e.preventDefault()
@@ -63,7 +63,7 @@ export default function ProspectDetails(props){
                     </div>
                     )
                 }) : <h1>Loading....</h1>}
-                    <div id='ind-password-area'><IndPassword id={link} /></div>
+                    <IndPassword id={link} />
                     <div id='ind-modify-form'><Modify location={props.location} id={editReference}/></div>
                     </div>
         </>

@@ -16,8 +16,8 @@ export default function Password(){
     function appear(){
         document.getElementById("specific-password-input").value = ""
         if ( password === "helloWorld"){
-            const layout = window.innerWidth <= 500 ? "flex" : "grid"
             //if password correct
+            const layout = window.innerWidth <= 500 ? "flex" : "grid"
             document.getElementById("ind-form").style.display = layout
             document.getElementById("specific-password-field").style.display = "none"
             document.getElementById("specific-password-input").value = ""
