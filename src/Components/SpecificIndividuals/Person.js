@@ -2,6 +2,7 @@ import React from 'react'
 import { app, getDatabase, onValue, ref, set} from "../../firebase"
 
 export default function Person(props){
+    const [ value, setValue ] = React.useState('')
 
     React.useEffect(function(){
         const db = getDatabase(app)
@@ -10,7 +11,10 @@ export default function Person(props){
             const data = snapshot.val()
             if ( data === null ){
             } else {
-                setValue(data)
+                if ( typeof data === 'string'){
+
+                    setValue(data)
+                }
             }
         })
         }, [ props.id ])
@@ -20,7 +24,7 @@ export default function Person(props){
     }
 
     const db = getDatabase(app)
-    const [ value, setValue ] = React.useState('')
+
 
     function close(e){
         e.preventDefault()
@@ -42,7 +46,7 @@ export default function Person(props){
         <div id='ind-details'>  
                 <h1>{props.name}</h1>
                 <button id='close-button-ind-details' type='button' onClick={close}>X</button>
-                <textarea onChange={(e) => setValue(e.target.value)} value={value}></textarea>
+                <textarea onChange={(e) => setValue(e.target.value)} placeholder='Please enter details here...' value={value}></textarea>
                 <button id='button-ind-details' type='button' onClick={saveChanges}>Save</button>
         </div>
     )
