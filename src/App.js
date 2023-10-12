@@ -10,14 +10,6 @@ import React from 'react';
 function App() {
   const [ authenticated, setAuthenticated ] = React.useState(false)
 
-  React.useEffect(() => {
-    setAuthenticated(JSON.parse(window.localStorage.getItem('auth')));
-  }, []);
-
-  React.useEffect(() => {
-    window.localStorage.setItem('auth', authenticated);
-  }, [authenticated]);
-
   return (
     <BrowserRouter>
       <div id='app' className="App">
