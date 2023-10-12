@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 export default function MainPassword(props){
     const [ password, setPassword ] = React.useState('')
     const navigate = useNavigate()
-    if (password === "helloWorld" || props.auth){
+    if (password === "helloWorld"){
         props.word(true)
         navigate('/')
     }
