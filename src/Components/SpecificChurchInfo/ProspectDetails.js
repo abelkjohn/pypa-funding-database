@@ -4,7 +4,7 @@ import { getDatabase, ref, onValue} from "../../firebase"
 import IndPassword from "./IndPassword"
 import Modify from "./Modify"
 import Person from "../SpecificIndividuals/Person"
-
+import { useNavigate } from "react-router-dom";
 
 
 export default function ProspectDetails(props){
@@ -15,7 +15,14 @@ export default function ProspectDetails(props){
     const [ personName, setPersonName ] = React.useState('')
 
     const db = getDatabase(app)
-    
+    const navigate = useNavigate() 
+
+    React.useEffect(() => {
+        if (props.auth !== true){
+            navigate('/')
+        }
+    }, [props.auth, navigate])
+
     React.useEffect(function(){
         const location = props.location
         const displayValue = props.name

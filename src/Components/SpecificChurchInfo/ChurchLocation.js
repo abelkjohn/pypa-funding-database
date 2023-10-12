@@ -5,7 +5,7 @@ import ProspectDetails from "./ProspectDetails"
 import Button from "./Button"
 import IndividualForms from "./IndividualForms"
 
-export default function ChurchLocation(){
+export default function ChurchLocation(props){
 
     const location = useLocation()
     const locationName = JSON.stringify(location.pathname)
@@ -14,7 +14,7 @@ export default function ChurchLocation(){
     return  (
         <>
             <Header location={usableValue} name={displayValue}/>
-            <ProspectDetails location={usableValue} name={displayValue}/>
+            <ProspectDetails location={usableValue} name={displayValue} auth={props.auth}/>
             <Button />
             <IndividualForms location={usableValue} />
         </>
